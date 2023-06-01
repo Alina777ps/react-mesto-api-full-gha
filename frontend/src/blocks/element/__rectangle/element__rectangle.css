@@ -1,0 +1,16 @@
+.element__rectangle {
+    margin: 0;
+    padding: 25px 15px 31px 21px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 820px) {
+    .element__rectangle {
+        padding: 25px 15px 31px 21px;
+    }
+}

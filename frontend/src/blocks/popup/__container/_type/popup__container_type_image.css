@@ -1,0 +1,14 @@
+.popup__container_type_image {
+        margin: 0 0 15px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        position: relative;
+}
+
+@media screen and (max-width: 570px) {
+    .popup__container_type_image {
+        margin-bottom: 12px;
+    }
+}

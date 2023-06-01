@@ -1,0 +1,14 @@
+.header__navBar_userInfo {
+    font-family: "Inter", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 122%;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-height: 22px;
+}
+

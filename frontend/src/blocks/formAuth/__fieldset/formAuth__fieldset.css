@@ -1,0 +1,15 @@
+.formAuth__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 358px;
+}
+
+@media screen and (max-width: 450px) {
+    .formAuth__fieldset {
+        width: 260px;
+    }
+}
