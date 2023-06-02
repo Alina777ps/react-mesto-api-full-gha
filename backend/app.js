@@ -21,8 +21,13 @@ const router = require('./routes/index');
 
 const app = express();
 
-const PORT = process.env.PORT || 3001;
-const { BD } = process.env || 'mongodb://127.0.0.1:27017/mestodb';
+// const PORT = process.env.PORT || 3001;
+// const { BD } = process.env || 'mongodb://127.0.0.1:27017/mestodb';
+
+const {
+  PORT = 3000,
+  BD = 'mongodb://127.0.0.1:27017/mestodb',
+} = process.env;
 
 mongoose.connect(BD)
   .then(() => {
