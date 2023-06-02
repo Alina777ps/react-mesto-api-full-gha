@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -11,10 +11,6 @@ const { regexUrl } = require('./utils/regularExpression');
 const NotFoundError = require('./errors/NotFoundError');
 
 const {
-  PORT,
-} = require('./config');
-
-const {
   createUser,
   login,
 } = require('./controllers/users');
@@ -25,10 +21,10 @@ const router = require('./routes/index');
 
 const app = express();
 
-// const PORT = process.env.PORT || 3001;
-// const { BD } = process.env;
+const PORT = process.env.PORT || 3001;
+const { BD } = process.env;
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
+mongoose.connect(BD)
   .then(() => {
     console.log('БД подключена');
   })
