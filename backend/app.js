@@ -22,7 +22,7 @@ const router = require('./routes/index');
 const app = express();
 
 const PORT = process.env.PORT || 3001;
-const { BD } = process.env;
+const { BD } = process.env || 'mongodb://127.0.0.1:27017/mestodb';
 
 mongoose.connect(BD)
   .then(() => {
