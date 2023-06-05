@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const { celebrate, Joi } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const cors = require('./middlewares/cors');
 
 const { regexUrl } = require('./utils/regularExpression');
 
@@ -40,6 +41,8 @@ mongoose.connect(BD)
 app.use(bodyParser.json());
 
 app.use(requestLogger);
+
+app.use(cors);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
