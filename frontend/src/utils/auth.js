@@ -29,18 +29,18 @@ export const authorize = (password, email) => {
   .then(checkResponse)
   .then((data) => {
     if (data.token) {
-      localStorage.setItem("token", data.token)
+      localStorage.setItem("jwt", data.token)
       return data
     }
   })
 };
 
-export const checkToken = (token) => {
+export const checkToken = (jwt) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${jwt}`,
     },
   })
     .then(checkResponse)
