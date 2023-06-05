@@ -99,10 +99,10 @@ const config = {
 };*/
 
 const config = {
-  url: "http://api.tarnakova.mesto.nomoredomains.rocks",
+  url: "https://api.tarnakova.mesto.nomoredomains.rocks",
   headers: {
     "Content-Type": "application/json",
-    authorization: `Bearer ${localStorage.getItem("token")}`,
+    authorization: `Bearer ${localStorage.getItem("jwt")}`,
   },
 };
 

@@ -266,10 +266,10 @@ function handleSubmitLogin(password, email) {
             />
             <Route path="*" element={<PageNotFound />} />
             <Route
-              path="/main"
+              path="/"
               element={
                 loggedIn ? (
-                  <Navigate to="/main" replace />
+                  <Navigate to="/" replace />
                 ) : (
                   <Navigate to="/sign-in" replace />
                 )
