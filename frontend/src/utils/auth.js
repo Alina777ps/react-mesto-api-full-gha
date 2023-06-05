@@ -1,6 +1,6 @@
 import { checkResponse } from "./checkResponse";
 
-export const BASE_URL = "http://api.tarnakova.mesto.nomoredomains.rocks";
+export const BASE_URL = "https://api.tarnakova.mesto.nomoredomains.rocks";
 
 export const register = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {
