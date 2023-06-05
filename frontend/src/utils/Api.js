@@ -91,10 +91,10 @@ class Api {
 }
 /*
 const config = {
-  url: "https://mesto.nomoreparties.co/v1/cohort-60",
+  url: "http://localhost:3001",
   headers: {
-    authorization: "e0bed1d8-4343-452c-a8c4-4d68365fbfac",
     "Content-Type": "application/json",
+    authorization: `Bearer ${localStorage.getItem("jwt")}`,
   },
 };*/
 

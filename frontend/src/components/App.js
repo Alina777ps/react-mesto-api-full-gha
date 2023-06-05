@@ -269,7 +269,7 @@ function handleSubmitLogin(password, email) {
               path="/"
               element={
                 loggedIn ? (
-                  <Navigate to="/" replace />
+                  <Navigate to="/main" replace />
                 ) : (
                   <Navigate to="/sign-in" replace />
                 )
