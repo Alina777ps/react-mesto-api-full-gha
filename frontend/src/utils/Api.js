@@ -89,12 +89,20 @@ class Api {
     return this._handleResponse(res);
   }
 }
-
+/*
 const config = {
   url: "https://mesto.nomoreparties.co/v1/cohort-60",
   headers: {
     authorization: "e0bed1d8-4343-452c-a8c4-4d68365fbfac",
     "Content-Type": "application/json",
+  },
+};*/
+
+const config = {
+  url: "http://api.tarnakova.mesto.nomoredomains.rocks",
+  headers: {
+    "Content-Type": "application/json",
+    authorization: `Bearer ${localStorage.getItem("token")}`,
   },
 };
 

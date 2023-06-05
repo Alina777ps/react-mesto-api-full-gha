@@ -25,7 +25,8 @@ export const authorize = (password, email) => {
       password: password,
       email: email,
     }),
-  }).then(checkResponse)
+  })
+  .then(checkResponse)
 };
 
 export const checkToken = (token) => {
