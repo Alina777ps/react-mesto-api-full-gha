@@ -11,7 +11,7 @@
 
 ## Ссылки на проект
 
-IP-адрес <84.201.174.125>
+IP 84.201.174.125
 
 Frontend https://tarnakova.mesto.nomoredomains.rocks
 

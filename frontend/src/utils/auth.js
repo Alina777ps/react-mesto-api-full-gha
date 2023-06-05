@@ -27,6 +27,12 @@ export const authorize = (password, email) => {
     }),
   })
   .then(checkResponse)
+  .then((data) => {
+    if (data.token) {
+      localStorage.setItem("token", data.token)
+      return data
+    }
+  })
 };
 
 export const checkToken = (token) => {
