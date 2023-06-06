@@ -140,7 +140,7 @@ module.exports.login = (req, res, next) => {
       return bcrypt.compare(password, user.password).then((matched) => {
         if (!matched) throw new UnauthorizedError('Неправильные почта или пароль');
         const token = getJwtToken(user.id);
-        return res.send({ token });
+        return res.send({ token, email });
       });
     })
     .catch(next);

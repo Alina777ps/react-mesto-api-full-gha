@@ -210,14 +210,7 @@ function handleSubmitLogin(password, email) {
           setLoggedIn(true);
           navigate("/main", { replace: true });
         })
-        .catch((error) => {
-          if (error.status === 401) {
-            console.log("401 — Токен не передан или передан не в том формате")
-          }
-          //console.log("401 — Переданный токен некорректен")
-          console.log(error.status, error.message, error.stack)
-        })
-        //.catch((error) => console.log(`Произошла ошибка: ${error}`));
+        .catch((error) => console.log(`Произошла ошибка: ${error}`));
     }
   };
 
