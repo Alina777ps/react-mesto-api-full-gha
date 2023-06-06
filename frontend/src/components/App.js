@@ -206,7 +206,7 @@ function handleSubmitLogin(password, email) {
       auth
         .checkToken(jwt)
         .then((res) => {
-          setUserEmail(res.data.email);
+          setUserEmail(res.email);
           setLoggedIn(true);
           navigate("/main", { replace: true });
         })
