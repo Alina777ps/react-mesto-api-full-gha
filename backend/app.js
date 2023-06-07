@@ -22,8 +22,6 @@ const auth = require('./middlewares/auth');
 
 const router = require('./routes/index');
 
-const app = express();
-
 // const PORT = process.env.PORT || 3001;
 // const { BD } = process.env || 'mongodb://127.0.0.1:27017/mestodb';
 
@@ -40,11 +38,13 @@ mongoose.connect(BD)
     console.log('Не удалось подключиться к БД');
   });
 
+const app = express();
+
+app.use(helmet());
+
 app.use(bodyParser.json());
 
 app.use(requestLogger);
-
-app.use(helmet());
 
 app.use(cors);
 
