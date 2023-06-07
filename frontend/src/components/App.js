@@ -58,14 +58,14 @@ function App() {
   React.useEffect(() => {
     api
       .getUserInfo()
-      .then((data) => setCurrentUser(data))
+      .then((user) => setCurrentUser(user))
       .catch((error) => console.log(`Произошла ошибка: ${error}`));
   }, []);
 
   React.useEffect(() => {
     api
       .getInitialCards()
-      .then((data) => setCards(data))
+      .then((cards) => setCards(cards))
       .catch((error) => console.log(`Произошла ошибка: ${error}`));
   }, []);
 
@@ -161,8 +161,8 @@ function App() {
     setIsLoading(true);
     api
       .addNewCard(card)
-      .then((newCard) => {
-        setCards([newCard, ...cards]);
+      .then((card) => {
+        setCards([card, ...cards]);
         closeAllPopups();
       })
       .catch((error) => console.log(`Произошла ошибка: ${error}`))
@@ -172,7 +172,7 @@ function App() {
 function handleSubmitRegister(password, email) {
   auth
       .register(password, email)
-      .then((data) => {
+      .then((user) => {
         setIsRegisterTrue(true);
         navigate("/sign-in", { replace: true });
       })
@@ -189,9 +189,9 @@ function handleSubmitLogin(password, email) {
   }
   auth
     .authorize(password, email)
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem("jwt", data.token);
+    .then((user) => {
+      if (user.token) {
+        localStorage.setItem("jwt", user.token);
         setLoggedIn(true);
         setUserEmail(email);
         navigate("/main", { replace: true });

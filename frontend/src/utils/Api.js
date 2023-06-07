@@ -20,11 +20,11 @@ class Api {
   }
 
   //создание новой карточки
-  async addNewCard(data) {
+  async addNewCard(card) {
     const res = await fetch(`${this._url}/cards`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify(data),
+      body: JSON.stringify(card),
     });
     return this._handleResponse(res);
   }
