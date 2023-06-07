@@ -126,7 +126,7 @@ function App() {
     api
       .deleteCard(card._id)
       .then(() => {
-        setCards((cadrs) => cadrs.filter((item) => item._id !== card._id));
+        setCards((card) => card.filter((item) => item._id !== card._id));
         closeAllPopups();
       })
       .catch((error) => console.log(`Произошла ошибка: ${error}`))
