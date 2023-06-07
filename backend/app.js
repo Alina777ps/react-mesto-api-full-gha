@@ -28,7 +28,7 @@ const app = express();
 // const { BD } = process.env || 'mongodb://127.0.0.1:27017/mestodb';
 
 const {
-  PORT = 3001,
+  PORT = 3000,
   BD = 'mongodb://127.0.0.1:27017/mestodb',
 } = process.env;
 
