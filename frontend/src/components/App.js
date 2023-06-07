@@ -56,18 +56,20 @@ function App() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
+    loggedIn &&
     api
       .getUserInfo()
       .then((user) => setCurrentUser(user))
       .catch((error) => console.log(`Произошла ошибка: ${error}`));
-  }, []);
+  }, [loggedIn]);
 
   React.useEffect(() => {
+    loggedIn &&
     api
       .getInitialCards()
       .then((cards) => setCards(cards))
       .catch((error) => console.log(`Произошла ошибка: ${error}`));
-  }, []);
+  }, [loggedIn]);
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
