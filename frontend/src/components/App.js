@@ -197,7 +197,10 @@ function handleSubmitLogin(password, email) {
         navigate("/main", { replace: true });
       }
     })
-    .catch((err) => setErrorMessege(err));
+    .catch((err) => {
+      setIsRegisterFalse(true);
+      setErrorMessege(err);
+    });
 }
 
   const tokenCheck = () => {
