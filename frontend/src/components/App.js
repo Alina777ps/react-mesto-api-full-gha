@@ -121,12 +121,12 @@ function App() {
     }
   }
 
-  function handleCardDelete(card) {
+  function handleCardDelete(cardId) {
     setIsLoading(true);
     api
-      .deleteCard(card._id)
+      .deleteCard(cardId._id)
       .then(() => {
-        setCards((card) => card.filter((item) => item._id !== card._id));
+        setCards((card) => card.filter((item) => item._id !== cardId._id));
         closeAllPopups();
       })
       .catch((error) => console.log(`Произошла ошибка: ${error}`))
