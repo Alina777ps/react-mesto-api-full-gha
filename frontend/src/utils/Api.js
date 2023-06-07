@@ -47,25 +47,25 @@ class Api {
   }
 
   //редактирование профиля
-  async setUserInfo(data) {
+  async setUserInfo(user) {
     const res = await fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        name: data.name,
-        about: data.about,
+        name: user.name,
+        about: user.about,
       }),
     });
     return this._handleResponse(res);
   }
 
   // обновления аватара
-  async setUserAvatar(data) {
+  async setUserAvatar(user) {
     const res = await fetch(`${this._url}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        avatar: data.avatar,
+        avatar: user.avatar,
       }),
     });
     return this._handleResponse(res);
