@@ -89,22 +89,22 @@ class Api {
     return this._handleResponse(res);
   }
 }
-
+/*
 const config = {
   url: "http://localhost:3001",
   headers: {
     "Content-Type": "application/json",
     authorization: `Bearer ${localStorage.getItem("jwt")}`,
   },
-};
-/*
+};*/
+
 const config = {
   url: "https://api.tarnakova.mesto.nomoredomains.rocks",
   headers: {
     "Content-Type": "application/json",
     authorization: `Bearer ${localStorage.getItem("jwt")}`,
   },
-};*/
+};
 
 const api = new Api(config);
 
