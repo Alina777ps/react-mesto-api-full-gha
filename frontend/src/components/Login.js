@@ -41,7 +41,7 @@ function Login({ handleSubmitLogin, errorMessege }) {
             <label className="formAuth__label">
               <input
                 className="formAuth__input formAuth__input_type_password"
-                type="text"
+                type="password"
                 placeholder="Пароль"
                 id="password"
                 name="password"
