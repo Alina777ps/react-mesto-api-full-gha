@@ -3,7 +3,7 @@ const allowedCors = [
   'https://tarnakova.mesto.nomoredomains.rocks',
   'http://tarnakova.mesto.nomoredomains.rocks',
   'https://localhost:3000',
-  'http://localhost:3001',
+  'http://localhost:3000',
 ];
 
 module.exports = (req, res, next) => {

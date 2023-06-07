@@ -2,10 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
 const { errors } = require('celebrate');
 const { celebrate, Joi } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
+const limiter = require('./middlewares/limiter');
 
 const { regexUrl } = require('./utils/regularExpression');
 
@@ -26,7 +28,7 @@ const app = express();
 // const { BD } = process.env || 'mongodb://127.0.0.1:27017/mestodb';
 
 const {
-  PORT = 3000,
+  PORT = 3001,
   BD = 'mongodb://127.0.0.1:27017/mestodb',
 } = process.env;
 
@@ -42,7 +44,11 @@ app.use(bodyParser.json());
 
 app.use(requestLogger);
 
+app.use(helmet());
+
 app.use(cors);
+
+app.use(limiter);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
